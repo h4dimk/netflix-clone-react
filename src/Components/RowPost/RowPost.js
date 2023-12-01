@@ -26,13 +26,10 @@ function RowPost(props) {
         if (response.data.results.length !== 0) {
           setUrlId(response.data.results[0]);
         } else {
-          // Handle the case when there are no video results
           console.log("No videos available for this movie.");
-          // You might want to display a message to the user or take other actions.
         }
       })
       .catch((error) => {
-        // Handle the error if the request fails
         console.error("Error fetching movie videos:", error);
       });
   };
@@ -47,7 +44,7 @@ function RowPost(props) {
             key={obj.id}
             className={props.isSmall ? "smallPoster" : "poster"}
             alt="posters"
-            src={`${imageUrl + obj.backdrop_path}`}
+            src={`${imageUrl + obj.poster_path}`}
           />
         ))}
       </div>
